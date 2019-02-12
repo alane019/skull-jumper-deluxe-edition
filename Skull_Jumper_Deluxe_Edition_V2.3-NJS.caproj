@@ -1,0 +1,793 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Skull_Jumper_Deluxe_Edition_V2.3-NJS</name>
+    <description>Challenging One-Level Platfomer Game. Win by avoiding obstacles and reaching the goal. </description>
+    <version>2.0</version>
+    <author>Adam Lane</author>
+    <author-email>adam@etverse.com</author-email>
+    <author-website>etverse.com</author-website>
+    <app-id></app-id>
+    <unique-id>3phjf8c2bcezm</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Scirra" id="warp">Warp</effect>
+        <effect author="Viktor Korsun" id="waterbg">Water background</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>1</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="BackgroundTile" sid="202356849280604">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Flash" sid="172343818853026">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="Player" sid="979032619258807">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="479315076126196">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="882128386502547">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="782046806946298">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="464673578549935">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation-folder name="Player">
+                    <animation-folder name="idle">
+                        <animation framecount="1" loop="1" name="idle" pingpong="1" repeatcount="1" repeatto="0" sid="490729630204919" speed="5">
+                            <frame duration="2" hotspotX="0.504505" hotspotY="0.408638" original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\grimJump5.png">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                    <animation-folder name="run">
+                        <animation framecount="8" loop="1" name="run" pingpong="0" repeatcount="1" repeatto="0" sid="292643220329079" speed="10">
+                            <frame duration="2" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.47973" hotspotY="0.342193">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501661">
+                                <collision-poly>
+                                    <point x="0.533783" y="0.0830565" />
+                                    <point x="0.858108" y="0.325581" />
+                                    <point x="0.515764" y="0.79402" />
+                                    <point x="0.0720721" y="0.458472" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                    <animation-folder name="jump" />
+                    <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="944457611734642" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="asdf" />
+            </animation-folder>
+        </object-type>
+        <object-type name="SolidTile" sid="491284840050589">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="693853411879755">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="692004178087939">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="MovingSolidTile" sid="626644685969029">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Sine" sid="117097824541263">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="184978953915550">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="JumpThruTile" sid="475470339816224">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="243466654029628">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="Keyboard" sid="395136947400508">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Audio" sid="611173461941584">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="bloodScreen" sid="501278233249297">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="315583053506550">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="WaterBackground">
+                    <effect id="waterbg" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="12" loop="1" name="Default" pingpong="1" repeatcount="12" repeatto="0" sid="303255848270874" speed="3">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GOALTile" sid="327969900125345">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="352154510320945">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="GoalText" sid="512652254887178">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="300512611265297">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="GoalTextOld" sid="859788634277374">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text2" sid="934099345352030">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WinText" sid="606900489292823">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="100194149974982">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="270367095985035">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="976046489825804">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="InGameText1" sid="446513383908748">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WinText2" sid="534383865494194">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="281688493361667">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="680131443666118">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="685725537838583">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Sprite" sid="138789697749559">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="562417746997707" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DEADtext" sid="913512111632884">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WinText3" sid="699508872555116">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="661318655375697">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="886603641285740">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="533060780505220">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="WinText4" sid="486439390675379">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="232905807256561">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="156992700335986">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="660959286468330">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="DeathCountDESCR" sid="721619492338596">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="634467368879680">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="DeathCountNumber" sid="198461090508632">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="804819438256881">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Sprite2" sid="252416821964050">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="512850171447119" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="NothingToSee" sid="766874776024997">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TbDeathCountMsg" sid="429858269139912">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="114485662761925">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="261407031759167">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="363306048266093">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="777851294750861">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="570351973418366" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DeathCountDESCR2" sid="685220123722425">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="287695784521297">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="deathTileNormal" sid="484011687453861">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="143522255391024">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="894762719559277">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Warp">
+                    <effect id="warp" />
+                </effect-type>
+            </effects>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\deathSawtoothFixed007.png" />
+        </object-type>
+        <object-type name="JumpThruTile2" sid="632193092213727">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="111260346728623">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="MovingSolidTileRED" sid="464905178574927">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="189515113185124">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="255391401439335">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="TrapText" sid="250728183066897">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="ShadowCaster" sid="818993813414766">
+                    <behavior id="shadowcaster" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="SolidREDtileRED" sid="381632448716156">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="776360122657136">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="noTouchTile" sid="816707511956125">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="NoTouchGLASStile" sid="688138718204881">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="deathTileXPLODE" sid="810968316412943">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="899674419291989">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="948178326397829">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\deathSawtoothFixed007.png" />
+        </object-type>
+        <object-type name="GoalTextTWO" sid="679293238075281">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="500642506918692">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="CrusherTileDeathTrigger1" sid="885540101669875">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="627238620752499">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="crusherTile" sid="642582375865971">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="253439400173661">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="165819936596237">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\emboss-rust--v002--ColorMatch.png" />
+        </object-type>
+        <object-type name="LocTriggerAudioHAHAHA" sid="529565844308212">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="MovingSolidTileEYESred" sid="438459181127587">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="259326280537578">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="772899156543560">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="516160425684441">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="289178715639529">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="MovingSolidTileEYESredTWO" sid="957098514755286">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="465522260522728">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="226317358726600">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="226264015486546">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="960198469610033">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+                <behavior-type name="Turret" sid="769972793541707">
+                    <behavior id="Turret" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="noseTileMoving2" sid="555903823455866">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Sine" sid="919416477959147">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\moving_Nose_TIle.png" />
+        </object-type>
+        <object-type name="AlmostThereText" sid="919568383916489">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NoTOUCHREDtileRedSuitMan" sid="111173831847660">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="blackNoTouchTile222" sid="191654372621867">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="blackNoTouchTile223" sid="833408390912784">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="695613093170958">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="GrayPUSHERdeathTile" sid="741796161005458">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="803130194978501">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="833998970635522">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\deathSawtoothFixed008.png" />
+        </object-type>
+        <object-type name="GraySTATICdeathTile" sid="773850395177231">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="628874443229569">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\deathSawtoothFixed008.png" />
+        </object-type>
+        <object-type name="DeathtileStucDestroy" sid="187445418838860">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="904012158960941">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="368538748172431">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\deathExplodeTile.png" />
+        </object-type>
+        <object-type name="Sprite3" sid="987303582626710">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="324894827057917" speed="5">
+                    <frame duration="1" hotspotX="0.501326" hotspotY="0.5" original-source="C:\Users\alane019\Desktop\70752cb9592b1f51e2e3405a5c08e833.png">
+                        <collision-poly>
+                            <point x="0.806366" y="0.665138" />
+                            <point x="0.501326" y="0.674312" />
+                            <point x="0.143236" y="0.752294" />
+                            <point x="0.127321" y="0.5" />
+                            <point x="0.180371" y="0.311927" />
+                            <point x="0.501326" y="0.37156" />
+                            <point x="0.790451" y="0.362385" />
+                            <point x="0.917772" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TimerTextVALUE" sid="815460283533082">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="259404149578421">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="TimerFinalVALUE" sid="206865249221341">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="196026479230695">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="TimerTextDescr" sid="857806160252165">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Flash" sid="538821481361278">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="score" sid="764658563237448">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="953487946938191">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="resultsBlackBox" sid="500223409615272">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="671900629111489">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="667236148184523" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CrusherTileDeathTriggerMoving" sid="705762573060565">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="149000700044599">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="142411598679101">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="crusherTileTranslucent" sid="656088408761401">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Sine" sid="344575811003086">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\crusherTile2.png" />
+        </object-type>
+        <object-type name="MovingNoTouchTile" sid="958616389581040">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Sine" sid="317464191375963">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="NoTouchBLUETile" sid="305117479501183">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="crusherTileBevel" sid="772271435251667">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="161376643527643">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="944089899960344">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\alane019\Box Sync\M I S C - T W O\G m  D e v\s p r i t e s\crusherTile.png" />
+        </object-type>
+        <object-type name="Text" sid="634935750552972">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="CrusuherText" sid="360725400005563">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Sine" sid="451997431462542">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Pulse">
+                    <effect id="pulse" />
+                </effect-type>
+            </effects>
+        </object-type>
+        <object-type name="Gamepad" sid="750374421210703">
+            <plugin id="gamepad" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="20" />
+        <global-instance type="Audio" uid="35">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Gamepad" uid="681">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="Ms_Pacman_Death.m4a" />
+        <file name="Ms_Pacman_Death.ogg" />
+        <file name="tada.m4a" />
+        <file name="tada.ogg" />
+        <file name="S2_20-SONIC-Jump.m4a" />
+        <file name="S2_20-SONIC-Jump.ogg" />
+        <file name="S2_53_wooWooWoo.m4a" />
+        <file name="S2_53_wooWooWoo.ogg" />
+        <file name="S2_57_pong-Noise.m4a" />
+        <file name="S2_57_pong-Noise.ogg" />
+        <file name="S2_3A_Pong-Noise-2.m4a" />
+        <file name="S2_3A_Pong-Noise-2.ogg" />
+        <file name="Real_Ms_Pacman_Death.m4a" />
+        <file name="Real_Ms_Pacman_Death.ogg" />
+        <file name="Speech Boss Hahaha.m4a" />
+        <file name="Speech Boss Hahaha.ogg" />
+        <file name="StucCollapseWithYell002.m4a" />
+        <file name="StucCollapseWithYell002.ogg" />
+        <file name="01_Track 01 - Galaxy Force II.ogg" />
+        <file name="FinalCountdown.m4a" />
+        <file name="FinalCountdown.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

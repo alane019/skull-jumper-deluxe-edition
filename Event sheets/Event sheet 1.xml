@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="697744250229311">
+            <conditions>
+                <condition id="3" name="Is button down" sid="543208094317407" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="215257206424943" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="565309414025372">
+            <conditions>
+                <condition id="3" name="Is button down" sid="111733997383819" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="207037892318667" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="679139606768703">
+            <conditions>
+                <condition id="3" name="Is button down" sid="535321092801278" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="860195144159363" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="602029845395880">
+            <conditions>
+                <condition id="3" name="Is button down" sid="576216695900099" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="762229147750847" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable comment="Time taken to complete level" constant="0" name="CompletionTime" sid="462378381431644" static="0" type="number">1</variable>
+        <variable comment="number of times player died" constant="0" name="deathCount" sid="148495130954649" static="0" type="number">-1</variable>
+        <comment>Animations, Main movements</comment>
+        <event-block any="1" sid="458907821521830">
+            <conditions>
+                <condition id="7" name="On button released" sid="630495053547450" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+                <condition id="7" name="On button released" sid="544410525671613" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="879572060322142" type="Player">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="959443350868207">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="612589660651752" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="545146723712364" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="785301334171123" type="Player">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+        <event-block any="1" sid="435253031652478">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="567467549502994" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="860481176246493" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="466534486838610" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="622718392484863" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="534478000859159">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="164450996629103" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="431765426315155" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="402345677026450" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="418298440605374" type="Player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment></comment>
+        <event-block any="1" sid="860660412715133">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="120651311355572" type="Player">
+                    <param id="0" name="Object">deathTileNormal</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="210576725226643" type="Player">
+                    <param id="0" name="Object">deathTileXPLODE</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set blend mode" sid="176855283985762" type="deathTileNormal">
+                    <param id="0" name="Blend mode">1</param>
+                </action>
+                <action id="1" name="Set blend mode" sid="586318524892311" type="deathTileXPLODE">
+                    <param id="0" name="Blend mode">1</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="539299866254148" type="Player">
+                    <param id="0" name="Magnitude">90</param>
+                    <param id="1" name="Duration">0.3</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="0" name="Play" sid="743355200391386" type="Audio">
+                    <param id="0" name="Audio file">Ms_Pacman_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="6" name="Set speed" sid="395728822425437" type="Player">
+                    <param id="0" name="Speed">1000</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="166582431429097" type="BackgroundTile">
+                    <param id="0" name="Degrees">45</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="537512401732129" type="bloodScreen">
+                    <param id="0" name="Layer">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="853775718673952" type="bloodScreen" />
+                <action behavior="Physics" id="27" name="Set enabled" sid="297981953404053" type="Player">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="651606539367757" type="Player">
+                    <param id="0" name="Impulse">10</param>
+                    <param id="1" name="Angle">45</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Physics" id="2" name="Apply force at angle" sid="424677775267300" type="Player">
+                    <param id="0" name="Force">20</param>
+                    <param id="1" name="Angle">23</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action id="-16" name="Wait" sid="540710216291394" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="402883620371382" type="System" />
+                <action behavior="Flash" id="0" name="Flash" sid="568306873571396" type="Player">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">3.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>If the player falls off the bottom of the layout, restart the level.</comment>
+        <event-block any="1" sid="580849319653256">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="795946864572116" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="585819668241701" type="Player">
+                    <param id="0" name="Magnitude">20</param>
+                    <param id="1" name="Duration">0.4</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="0" name="Play" sid="168261939649294" type="Audio">
+                    <param id="0" name="Audio file">Real_Ms_Pacman_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">1</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="928263939446664" type="BackgroundTile">
+                    <param id="0" name="Degrees">45</param>
+                </action>
+                <action id="-16" name="Wait" sid="782963229382120" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="642652541694116" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="513150915687463">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="147802067770547" type="Keyboard">
+                    <param id="0" name="Key">89 (Y)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="608816276831015" type="Audio">
+                    <param id="0" name="Audio file">Ms_Pacman_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="407418085471734">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="530760747086099" type="Player" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="476753439807685" type="Audio">
+                    <param id="0" name="Audio file">S2_20-SONIC-Jump</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="Score" sid="527510658310952" static="0" type="number">1</variable>
+        <variable constant="0" name="finalScore" sid="455739397535805" static="0" type="number">0</variable>
+        <variable comment="divisor of final score formula" constant="0" name="DivisorScorePortion" sid="686446861345400" static="0" type="number">1</variable>
+        <variable constant="0" name="deathCountTimesThirty" sid="821320388986881" static="0" type="number">1</variable>
+        <variable comment="goalTouchedBoolean" constant="0" name="goalTouched" sid="912381223799541" static="0" type="number">0</variable>
+        <event-block sid="953789107314322">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="299282103673462" type="Player">
+                    <param id="0" name="Object">GOALTile</param>
+                </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="445485116037540" type="Player" />
+                <condition id="-14" name="Compare variable" sid="335190130704533" type="System">
+                    <param id="0" name="Variable">goalTouched</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="751741731716257" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="929164178079806" type="System">
+                    <param id="0" name="Variable">goalTouched</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="721190323777044" type="WinText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="686362784764220" type="System">
+                    <param id="0" name="Variable">TimerOn</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="657207094615593" type="TimerFinalVALUE">
+                    <param id="0" name="Text">CompletionTime</param>
+                </action>
+                <action id="-15" name="Set visible" sid="441284035778043" type="TimerFinalVALUE">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="718845210115084" type="WinText2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="548285430474569" type="TbDeathCountMsg">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="602601985852247" type="TbDeathCountMsg">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="361660345667304" type="TbDeathCountMsg">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action behavior="Jumpthru" id="0" name="Set enabled" sid="988447349173884" type="TbDeathCountMsg">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="860567754605947" type="resultsBlackBox">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="949747258469429" type="DeathCountNumber">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Play" sid="522707694907963" type="Audio">
+                    <param id="0" name="Audio file">S2_53_wooWooWoo</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="624464557781528" type="TbDeathCountMsg" />
+                <action id="-15" name="Set visible" sid="428560937644882" type="DeathCountDESCR">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="944473144067607" type="System">
+                    <param id="0" name="Variable">deathCountTimesThirty</param>
+                    <param id="1" name="Value">deathCount * 30</param>
+                </action>
+                <action id="-9" name="Set value" sid="854068060947737" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">Score + deathCountTimesThirty</param>
+                </action>
+                <action id="-9" name="Set value" sid="104760019168560" type="System">
+                    <param id="0" name="Variable">DivisorScorePortion</param>
+                    <param id="1" name="Value">Score + CompletionTime + 1</param>
+                </action>
+                <action id="-9" name="Set value" sid="886675621926108" type="System">
+                    <param id="0" name="Variable">finalScore</param>
+                    <param id="1" name="Value">1000000  / DivisorScorePortion</param>
+                </action>
+                <action id="0" name="Set text" sid="997534217931380" type="score">
+                    <param id="0" name="Text">finalScore</param>
+                </action>
+                <action id="-15" name="Set visible" sid="414801703183975" type="score">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="884972041846582" type="WinText" />
+                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="644880638945169" type="WinText2">
+                    <param id="0" name="Object">Text2</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="273705451402424" type="WinText">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="364743221269569" type="WinText2">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">3</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="663356822534815" type="WinText2" />
+                <action id="6" name="Set blend mode" sid="135430846832453" type="WinText">
+                    <param id="0" name="Blend mode">9</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="277676288341367" type="DeathCountDESCR" />
+                <action behavior="Fade" id="1" name="Start fade" sid="894089363697469" type="DeathCountNumber" />
+                <action behavior="Fade" id="1" name="Start fade" sid="513127598857065" type="TimerFinalVALUE" />
+                <action id="-16" name="Wait" sid="636853661203810" type="System">
+                    <param id="0" name="Seconds">8</param>
+                </action>
+                <action id="-9" name="Set value" sid="661650357952749" type="System">
+                    <param id="0" name="Variable">deathCount</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-9" name="Set value" sid="974289819782205" type="System">
+                    <param id="0" name="Variable">CompletionTime</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-24" name="Move to top" sid="428485369774814" type="resultsBlackBox" />
+                <action id="33" name="Stop all" sid="525841051589003" type="Audio" />
+                <action id="-16" name="Wait" sid="446021553531405" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="484689406794334" type="System" />
+            </actions>
+        </event-block>
+        <comment>Player Movement Animations&#x09;</comment>
+        <event-block bookmark="1" sid="958760954728976">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="493875057996318" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="357055590627065" type="Player">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="542974214475946">
+            <conditions>
+                <condition id="3" name="On key released" sid="937055905373820" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="3" name="Is button down" sid="121065105909887" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="185632358026661" type="Player">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="929316067566376">
+            <conditions>
+                <condition id="3" name="On key released" sid="935861666573624" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="3" name="Is button down" sid="387396954969833" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="733511122672791" type="Player">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block bookmark="1" sid="262358107505104">
+            <conditions>
+                <condition id="2" name="Key is down" sid="957161076744399" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="3" name="Is button down" sid="889939312059932" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="242963770801107" type="Player">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" bookmark="1" sid="330646242798868">
+            <conditions>
+                <condition id="2" name="Key is down" sid="543158076943060" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="3" name="Is button down" sid="399437946520416" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="914465380460558" type="Player">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Miscillaneous .  .  .  &#x09;</comment>
+        <event-block sid="748079389918167">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="342802819513883" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="875224101947299" type="GoalText">
+                    <param id="0" name="&apos;On&apos; time">0.8</param>
+                    <param id="1" name="&apos;Off&apos; time">0.3</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="541894870450509">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="825363658097055">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="971197803210792" type="Player">
+                    <param id="0" name="Object">SolidTile</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="900061753498558" type="Audio">
+                    <param id="0" name="Audio file">S2_57_pong-Noise</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-7</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="744204035214757">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="236672358624648" type="Player">
+                    <param id="0" name="Object">MovingSolidTile</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="143148111298546" type="Audio">
+                    <param id="0" name="Audio file">S2_57_pong-Noise</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-7</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="217418150774475">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="868244514646079" type="Player">
+                    <param id="0" name="Object">JumpThruTile</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="310657907451925" type="Audio">
+                    <param id="0" name="Audio file">S2_3A_Pong-Noise-2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-7</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>LAYOUT RESTART ACTIONS&#x09;</comment>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="877969383864686">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="759875261290571" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="940038219310208" type="Audio" />
+                <action id="-9" name="Set value" sid="650814195176878" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="474995992828729" type="TimerTextVALUE">
+                    <param id="0" name="Text">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="272301703555818" type="System">
+                    <param id="0" name="Variable">TimerOn</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="982264138857743" type="System">
+                    <param id="0" name="Variable">CompletionTime</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="132135047911005" type="System">
+                    <param id="0" name="Variable">goalTouched</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="893043877528309" type="System">
+                    <param id="0" name="Variable">deathCount</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="226797924155413" type="System">
+                    <param id="0" name="Variable">DivisorScorePortion</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="911163613210471" type="DeathCountNumber">
+                    <param id="0" name="Text">deathCount</param>
+                </action>
+                <action id="0" name="Play" sid="697064378656839" type="Audio">
+                    <param id="0" name="Audio file">01_Track 01 - Galaxy Force II</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Additional Death Obstable Actions and Boss&#x09;</comment>
+        <event-block any="1" sid="248149378416943">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="531239976903650" type="Player">
+                    <param id="0" name="Object">CrusherTileDeathTrigger1</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="922969583523261" type="Player">
+                    <param id="0" name="Object">MovingSolidTileEYESredTWO</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="710189677181702" type="Player">
+                    <param id="0" name="Object">MovingSolidTileEYESred</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="956447145352340" type="Player">
+                    <param id="0" name="Object">CrusherTileDeathTriggerMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="170600498755393" type="Player">
+                    <param id="0" name="Magnitude">90</param>
+                    <param id="1" name="Duration">0.3</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="0" name="Play" sid="452794173706084" type="Audio">
+                    <param id="0" name="Audio file">Ms_Pacman_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">300</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="625394392087194" type="bloodScreen">
+                    <param id="0" name="Layer">&quot;foreground&quot;</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="319397072312302" type="BackgroundTile">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">4</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="691110512643485" type="Player">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="464394769669360" type="Player">
+                    <param id="0" name="Impulse">10</param>
+                    <param id="1" name="Angle">45</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Physics" id="2" name="Apply force at angle" sid="624695514272018" type="Player">
+                    <param id="0" name="Force">20</param>
+                    <param id="1" name="Angle">23</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action id="0" name="Play" sid="489220593032766" type="Audio">
+                    <param id="0" name="Audio file">Speech Boss Hahaha</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="764012857397592" type="Player">
+                    <param id="0" name="Magnitude">90</param>
+                    <param id="1" name="Duration">0.3</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action id="0" name="Play" sid="361844193257940" type="Audio">
+                    <param id="0" name="Audio file">Ms_Pacman_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="6" name="Set speed" sid="812456039906248" type="Player">
+                    <param id="0" name="Speed">1000</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="633629666142015" type="BackgroundTile">
+                    <param id="0" name="Degrees">45</param>
+                </action>
+                <action id="-16" name="Wait" sid="380082826217120" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="766539091315247" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="365842150957038">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="506409749424966" type="Player">
+                    <param id="0" name="Object">MovingSolidTileEYESred</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="372032142695089" type="Audio">
+                    <param id="0" name="Audio file">Speech Boss Hahaha</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="998018118300884" type="MovingSolidTileEYESredTWO">
+                    <param id="0" name="&apos;On&apos; time">0.5</param>
+                    <param id="1" name="&apos;Off&apos; time">0.5</param>
+                    <param id="2" name="Duration">3.0</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="857112278437994" type="MovingSolidTileEYESred">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">6.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="136688018936671">
+            <conditions>
+                <condition id="-23" name="While" sid="462336117870317" type="System" />
+                <condition id="1" name="Is overlapping another object" sid="102659165729476" type="Player">
+                    <param id="0" name="Object">LocTriggerAudioHAHAHA</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="984259940025497" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="973694752702856" type="Audio">
+                    <param id="0" name="Audio file">Speech Boss Hahaha</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="333928944065816" type="MovingSolidTileEYESredTWO">
+                    <param id="0" name="&apos;On&apos; time">0.5</param>
+                    <param id="1" name="&apos;Off&apos; time">0.5</param>
+                    <param id="2" name="Duration">3.0</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="896179064368791" type="MovingSolidTileEYESred">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">6.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="345069182089680">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="105383404902203" type="System">
+                    <param id="0" name="Interval (seconds)">7</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="189280187693162">
+            <conditions />
+            <actions />
+            <sub-events>
+                <comment>System Timer&#x09;</comment>
+            </sub-events>
+        </event-block>
+        <variable comment="TimerOnBoolean" constant="0" name="TimerOn" sid="265347425239697" static="0" type="number">1</variable>
+        <event-block sid="574156163679008">
+            <conditions>
+                <condition id="-23" name="While" sid="558210883374998" type="System" />
+                <condition id="-14" name="Compare variable" sid="577330137143178" type="System">
+                    <param id="0" name="Variable">TimerOn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="716729909853168" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="799482711911043" type="System">
+                    <param id="0" name="Variable">CompletionTime</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="237713000028785" type="TimerTextVALUE">
+                    <param id="0" name="Text">CompletionTime</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Explosive Items, Structure Collapse&#x09;</comment>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="606539301805745">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="345089879918739" type="Player">
+                    <param id="0" name="Object">DeathtileStucDestroy</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="200934221472634" type="Player">
+                    <param id="0" name="Object">MovingSolidTileEYESred</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="203415850002700" type="Player">
+                    <param id="0" name="Object">MovingSolidTileEYESredTWO</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="934126893252217" type="Player">
+                    <param id="0" name="Object">MovingSolidTileRED</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="127373904426570" type="Player">
+                    <param id="0" name="Object">deathTileXPLODE</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set blend mode" sid="609393185376597" type="DeathtileStucDestroy">
+                    <param id="0" name="Blend mode">1</param>
+                </action>
+                <action id="1" name="Set blend mode" sid="240448739627463" type="Player">
+                    <param id="0" name="Blend mode">1</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="380174785447525" type="SolidTile">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Play" sid="257294085480768" type="Audio">
+                    <param id="0" name="Audio file">Ms_Pacman_Death</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">30</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="520003411953768" type="Audio">
+                    <param id="0" name="Audio file">StucCollapseWithYell002</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Physics" id="15" name="Set velocity" sid="597109967047014" type="SolidTile">
+                    <param id="0" name="X component">69</param>
+                    <param id="1" name="Y component">35</param>
+                </action>
+                <action behavior="Physics" id="0" name="Apply force" sid="290055587896151" type="Player">
+                    <param id="0" name="Force X">54</param>
+                    <param id="1" name="Force Y">33</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action behavior="Physics" id="2" name="Apply force at angle" sid="342406951499335" type="SolidTile">
+                    <param id="0" name="Force">65</param>
+                    <param id="1" name="Angle">015</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="ScrollTo" id="0" name="Shake" sid="263778119765751" type="Player">
+                    <param id="0" name="Magnitude">90</param>
+                    <param id="1" name="Duration">0.3</param>
+                    <param id="2" name="Mode">0</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="610162282713260" type="Player">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="720812181736774" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action behavior="Physics" id="24" name="Set prevent rotation" sid="829968641474298" type="Player">
+                    <param id="0" name="Setting">1</param>
+                </action>
+                <action id="1" name="Set blend mode" sid="183306645234950" type="Player">
+                    <param id="0" name="Blend mode">9</param>
+                </action>
+                <action id="0" name="Play" sid="526179098002800" type="Audio">
+                    <param id="0" name="Audio file">Speech Boss Hahaha</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="628551718934536" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-21" name="Rotate toward position" sid="552007904978350" type="Player">
+                    <param id="0" name="Degrees">50</param>
+                    <param id="1" name="X">0</param>
+                    <param id="2" name="Y">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="681442842771883" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="1" name="Set blend mode" sid="993184920659863" type="Player">
+                    <param id="0" name="Blend mode">0</param>
+                </action>
+                <action id="-21" name="Rotate toward position" sid="573099810595793" type="Player">
+                    <param id="0" name="Degrees">20</param>
+                    <param id="1" name="X">0</param>
+                    <param id="2" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="655574231624825">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="381139624312576" type="Player">
+                    <param id="0" name="Object">GraySTATICdeathTile</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set blend mode" sid="947579537097542" type="GraySTATICdeathTile">
+                    <param id="0" name="Blend mode">9</param>
+                </action>
+                <action id="0" name="Play" sid="231042807549486" type="Audio">
+                    <param id="0" name="Audio file">S2_57_pong-Noise</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="611332682771415">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="554714937318917" type="Player">
+                    <param id="0" name="Object">GrayPUSHERdeathTile</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set blend mode" sid="588588373055802" type="GrayPUSHERdeathTile">
+                    <param id="0" name="Blend mode">9</param>
+                </action>
+                <action id="0" name="Play" sid="170721626196698" type="Audio">
+                    <param id="0" name="Audio file">S2_57_pong-Noise</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="887618355051027">
+            <conditions>
+                <condition id="9" inverted="1" name="Is overlapping at offset" sid="721842685156591" type="Player">
+                    <param id="0" name="Object">GraySTATICdeathTile</param>
+                    <param id="1" name="Offset X">1</param>
+                    <param id="2" name="Offset Y">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set blend mode" sid="788390273232624" type="GraySTATICdeathTile">
+                    <param id="0" name="Blend mode">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="752248700009191">
+            <conditions>
+                <condition id="9" inverted="1" name="Is overlapping at offset" sid="186734334800536" type="Player">
+                    <param id="0" name="Object">GrayPUSHERdeathTile</param>
+                    <param id="1" name="Offset X">1</param>
+                    <param id="2" name="Offset Y">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set blend mode" sid="898669821979650" type="GrayPUSHERdeathTile">
+                    <param id="0" name="Blend mode">2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
